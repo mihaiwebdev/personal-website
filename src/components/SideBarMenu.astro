@@ -1,0 +1,44 @@
+---
+const activeClass = "bg-base-300";
+---
+
+<ul class="menu grow shrink menu-md overflow-y-auto">
+    <li ><a class="py-3 bg-base-300 text-base nav-link" id="home-link" >Home</a></li>
+    <li><a class="py-3 text-base nav-link" id="cv-link">CV</a></li>
+    <li><a class= "py-3 text-base nav-link" id="projects-link">Projects</a></li>
+    <li>
+        <a
+            class="py-3 text-base"
+            href="mailto:1mihaisava1@gmail.com"
+            target="_blank"
+            referrerpolicy="no-referrer-when-downgrade">Contact</a
+        >
+    </li>
+</ul>
+
+<script define:vars={{  activeClass: activeClass,  }}>
+
+const navlinks = document.querySelectorAll('.nav-link') 
+
+navlinks.forEach(link => {
+    link.addEventListener('click', (e) => {     
+        
+        navlinks.forEach(navLink => navLink.classList.remove(activeClass))
+        const targetElement = document.getElementById(e.target.innerText.toLowerCase())    
+        
+    
+        if (e.target.innerText === link.innerText) {
+            e.target.classList.add(activeClass)
+        } else {
+            e.target.classList.remove(activeClass)
+        }
+
+        targetElement.scrollIntoView({
+            behavior: 'smooth'
+        })
+
+       
+        
+    })  
+})
+</script>
