@@ -10,12 +10,7 @@ export interface Props {
   ogType?: string;
 }
 
-const {
-  title,
-  description,
-  image = "https://firebasestorage.googleapis.com/v0/b/movie-picker-81e11.appspot.com/o/mihai-portfolio.png?alt=media&token=61cd2071-f172-44c5-b8d0-2ecfbb83f3bc",
-  ogType = "website",
-} = Astro.props;
+const { title, description, image, ogType = "website" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -31,12 +26,18 @@ const {
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content={ogType} />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={image} />
+<!-- Open Graph / Facebook card -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.savamihai.com" />
+<meta property="og:title" content="Portfolio Website" />
+<meta
+  property="og:description"
+  content="Portfolio website with personal projects."
+/>
+<meta
+  property="og:image"
+  content="https://firebasestorage.googleapis.com/v0/b/movie-picker-81e11.appspot.com/o/mihai-portfolio.png?alt=media&token=61cd2071-f172-44c5-b8d0-2ecfbb83f3bc"
+/>
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
