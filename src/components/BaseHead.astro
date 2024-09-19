@@ -13,7 +13,7 @@ export interface Props {
 const {
   title,
   description,
-  image = "/mihai-portfolio.png",
+  image = "https://firebasestorage.googleapis.com/v0/b/movie-picker-81e11.appspot.com/o/mihai-portfolio.png?alt=media&token=61cd2071-f172-44c5-b8d0-2ecfbb83f3bc",
   ogType = "website",
 } = Astro.props;
 ---
@@ -36,7 +36,7 @@ const {
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={image} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
