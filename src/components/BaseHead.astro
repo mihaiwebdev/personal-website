@@ -38,10 +38,15 @@ const { title, description, image, ogType = "website" } = Astro.props;
   property="og:image"
   content="https://firebasestorage.googleapis.com/v0/b/movie-picker-81e11.appspot.com/o/mihai-portfolio.png?alt=media&token=61cd2071-f172-44c5-b8d0-2ecfbb83f3bc"
 />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={image} />
+<meta
+  property="twitter:image"
+  content="https://firebasestorage.googleapis.com/v0/b/movie-picker-81e11.appspot.com/o/mihai-portfolio.png?alt=media&token=61cd2071-f172-44c5-b8d0-2ecfbb83f3bc"
+/>
