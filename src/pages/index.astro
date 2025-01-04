@@ -8,9 +8,9 @@ import CvSection from "../components/CvSection.astro";
   <div class="pb-12 mt-5" id="home">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm Mihai Sava</div>
-    <div class="text-3xl py-3 font-bold">Front-End Developer</div>
+    <div class="text-3xl py-3 font-bold">Full-Stack Developer</div>
     <div class="py-2">
-      <text class="text-lg">
+      <!-- <text class="text-lg">
         I'm a Frontend Developer who loves to work with TypeScript. I hold
         certifications from <b>Harvard's CS50</b> courses in Computer Science and
         Web Programming and from 20 additional courses in web development.
@@ -21,6 +21,13 @@ import CvSection from "../components/CvSection.astro";
         many other personal projects out of pure passion, including an <b
           >award-winning</b
         > Pathfinding Visualizer app.
+      </text>
+       -->
+      <text class="text-lg">
+        I'm a self-taught software developer who loves build stuff. I've
+        launched a movie recommendation app which attracted
+        <b>2,000 users</b>; and built many other personal projects out of pure
+        passion.
       </text>
     </div>
   </div>
@@ -38,19 +45,12 @@ import CvSection from "../components/CvSection.astro";
     url="https://www.moviepicker.app"
     badge="2,000+ users"
   />
-
+  <div class="divider my-0"></div>
   <HorizontalCard
     title="Recipe Finder - AI-Powered"
     img="/recipe-finder.png"
     desc="A Next.js app where you just describe what you want to eat, and AI gives you 5 recipe ideas with images to match."
     url="https://www.youtube.com/watch?v=fwmlO7JydyM"
-  />
-
-  <HorizontalCard
-    title="AI Code Challenge App"
-    img="/ai-code-challenge.png"
-    desc="Developed a game utilizing AI to generate code snippets and evaluate user responses to determine correctness. Built with OpenAI, TypeScript, Angular, SCSS, Node and Express"
-    url="https://ai-guess-code-output-production.up.railway.app/"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
@@ -60,6 +60,15 @@ import CvSection from "../components/CvSection.astro";
     url="https://celadon-monstera-509a49.netlify.app/"
     badge="Award winning"
   />
+
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="AI Code Challenge App"
+    img="/ai-code-challenge.png"
+    desc="Developed a game utilizing AI to generate code snippets and evaluate user responses to determine correctness. Built with OpenAI, TypeScript, Angular, SCSS, Node and Express"
+    url="https://ai-guess-code-output-production.up.railway.app/"
+  />
+
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Home Services Platform"
@@ -108,9 +117,9 @@ import CvSection from "../components/CvSection.astro";
     url="https://mihaiwebdev.github.io/Shopping-website/"
   />
 
-  <div class="mt-5">
+  <!-- <div class="mt-5">
     <CvSection />
-  </div>
+  </div> -->
 </BaseLayout>
 
 <script></script>
