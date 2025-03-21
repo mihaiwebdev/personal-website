@@ -1,51 +1,71 @@
 ---
+import Link from "@components/Link.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CvSection from "../components/CvSection.astro";
 ---
 
 <BaseLayout>
   <div class="pb-12 mt-5" id="home">
     <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Mihai Sava</div>
+    <div class="text-5xl font-bold">I'm Mihai</div>
     <div class="text-3xl py-3 font-bold">Full-Stack Developer</div>
     <div class="py-2">
-      <!-- <text class="text-lg">
-        I'm a Frontend Developer who loves to work with TypeScript. I hold
-        certifications from <b>Harvard's CS50</b> courses in Computer Science and
-        Web Programming and from 20 additional courses in web development.
-        <br />
-        <br />
-        I have launched a successful movie recommendation app which has attracted
-        <b>2,000 users</b> and reached a peak of 100 daily active users; and built
-        many other personal projects out of pure passion, including an <b
-          >award-winning</b
-        > Pathfinding Visualizer app.
-      </text>
-       -->
-      <text class="text-lg">
-        I'm a self-taught software developer who loves build stuff. I've
-        launched a movie recommendation app which attracted
-        <b>2,000 users</b>; and built many other personal projects out of pure
-        passion.
-      </text>
+      <p class="animate">
+        I'm a Software Developer on the AI Innovation team at Marsh McLennan, and in my free time, I love building tools that make life easier, like:
+        <span class="block">
+          ✨ <Link href="https://video-repurpose.com">
+            𝗩𝗶𝗱𝗲𝗼-𝗥𝗲𝗽𝘂𝗿𝗽𝗼𝘀𝗲.𝗰𝗼𝗺
+          </Link>
+          – Convert your videos into blogs, newsletters, and social media posts in minutes. 
+        </span>
+        <span class="block">
+          🎬 <Link href="https://moviepicker.app">𝗠𝗼𝘃𝗶𝗲𝗣𝗶𝗰𝗸𝗲𝗿.𝗮𝗽𝗽</Link> 
+           – Find a movie to watch in seconds, not hours. 
+        </span>
+
+        
     </div>
   </div>
 
   <div>
     <div id="projects" class="text-3xl w-full font-bold mb-2">
-      My projects {"</>"}
+      My Apps {"</>"}
     </div>
   </div>
 
   <HorizontalCard
-    title="Movie Picker"
-    img="/movie-picker-hero.png"
-    desc="Built a web app to help movie lovers to find a Movie or TV Series to watch Fast! You can discover top-rated movies and TV shows to watch on your favorite streaming platform, based on your mood or genres that matches your current vibe."
-    url="https://www.moviepicker.app"
-    badge="2,000+ users"
+    title="Video Repurpose"
+    img="/video-repurpose-cta.png"
+    desc="Video Repurpose helps Youtube content creators to maximize their reach by converting their videos into engaging blogs, newsletters, and social media posts in minutes."
+    url="/projects/video-repurpose"
+    badge="NEW!"
+    badgeColor="bg-blue-500"
+    badgeTextcolor="text-white"
+    badgeAnimation="animate-bounce"
   />
   <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Movie Picker"
+    img="/movie-picker.png"
+    desc=`Movie Picker is completly FREE and it's scope is to help movie lovers to find a Movie or TV Series to watch Fast!
+    You can discover top-rated movies and TV shows to watch on your favorite streaming platform, based on your mood or genres that matches your current vibe.`
+    url="/projects/movie-picker"
+    badge="FREE"
+  />
+ 
+  <div class="mt-12">
+    <div id="projects" class="flex justify-between items-end w-full  mb-2">
+      <span class="font-bold text-3xl">
+        Side Projects {"🧑‍💻"}
+      </span>
+
+      <div class=" text-lg text-gray-600 font-bold  animate-pulse">
+        <Link href="/projects" >See all projects</Link>
+      </div>
+    </div>
+  </div>
+
+  
   <HorizontalCard
     title="Recipe Finder - AI-Powered"
     img="/recipe-finder.png"
@@ -58,65 +78,9 @@ import CvSection from "../components/CvSection.astro";
     img="/pathfinding-1.png"
     desc="Developed an interactive visual interface for demonstrating three search algorithms, featuring maze generation, mouse-enabled wall drawing, adjustable start and end points, and pathfinding algorithm selection"
     url="https://celadon-monstera-509a49.netlify.app/"
-    badge="Award winning"
   />
 
-  <!-- <div class="divider my-0"></div>
-  <HorizontalCard
-    title="AI Code Challenge App"
-    img="/ai-code-challenge.png"
-    desc="Developed a game utilizing AI to generate code snippets and evaluate user responses to determine correctness. Built with OpenAI, TypeScript, Angular, SCSS, Node and Express"
-    url="https://ai-guess-code-output-production.up.railway.app/"
-  /> -->
-
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Home Services Platform"
-    img="/home-services.png"
-    desc="Created a platform to facilitate collaboration between workers and clients, offering distinct views for each user role. Implemented using React.js, TailwindCSS, React-Redux on the frontend, and Node.js, Express.js, MongoDB, and AWS for the backend"
-    url="https://www.youtube.com/watch?v=h3OgPVsbZ9E"
-  />
-
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Weather App"
-    img="/weather-1.png"
-    desc="Developed a weather application with a dynamic custom design based on the weather condition"
-    url="https://weather-app-beryl-eta-62.vercel.app/"
-  />
-
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Kanban - Task Management App"
-    img="/kanban1.jpg"
-    desc="I have created a task management app where you can register, create boards and add tasks. The tasks are ordered by 3 columns: To do, Doing and Done and you can update their status as you move forward."
-    url="https://www.youtube.com/watch?v=JNeIeC8haQE"
-  />
-
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Audiophile - E-commerce Website"
-    img="/audiophile-thumbnail.jpeg"
-    desc="I have created a visually appealing e-commerce website for a fictional brand called Audiophile, using React, TailwindCSS and Framer Motion"
-    url="https://audiophile-website-sigma.vercel.app/"
-  />
-
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="WebSavantHub Portfolio - Landing Page"
-    img="/web-savant.jpg"
-    desc="Built a responsive brand website with a custom design using React, TailwindCss and Framer Motion"
-    url="https://web-savant.vercel.app/"
-  />
-
-  <!-- <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Mall Shopping - Landing Page"
-    img="/shopping-mall-1.png"
-    desc="I've created a responsive landing page for a shopping app with a custom design and animations, using plain HTML, CSS and JavaScript"
-    url="https://mihaiwebdev.github.io/Shopping-website/"
-  /> -->
-
+  
   <!-- <div class="mt-5">
     <CvSection />
   </div> -->

@@ -1,0 +1,42 @@
+---
+
+interface Props {
+  text?: string;
+  className?: string;
+  variant?: 'default' | 'outline' | 'ghost';
+  
+}
+
+const { 
+  text = "Back", 
+  className = "",
+  variant = "default"
+} = Astro.props;
+
+// Tailwind classes based on variant
+const variantClasses = {
+  default: "bg-gray-100 hover:bg-gray-200 text-gray-800",
+  outline: "bg-transparent border border-gray-300 hover:bg-gray-50 text-gray-800",
+  ghost: "bg-transparent hover:bg-gray-100 text-gray-700"
+};
+
+const buttonClasses = `
+  flex inline-flex items-center gap-2 px-4 py-2 rounded-md transition-colors duration-200
+  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400
+  ${variantClasses[variant]} ${className}
+`;
+
+---
+
+<button
+  onclick="history.back()"
+  id="back-button"
+  class={buttonClasses}
+  aria-label="Go back"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+    <path d="M19 12H5" />
+    <path d="M12 19l-7-7 7-7" />
+  </svg>
+  <span>{text}</span>
+</button>
