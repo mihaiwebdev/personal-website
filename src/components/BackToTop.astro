@@ -1,12 +1,29 @@
-<button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24"
-    class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90">
-    <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
-    <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
-  </svg>
-  <div class="text-sm">
-    Back to top
-  </div>
+---
+
+// Tailwind classes based on variant
+const variantClasses = {
+  default: "bg-gray-100 hover:bg-gray-200 text-gray-800",
+  outline: "bg-transparent border border-gray-300 hover:bg-gray-50 text-gray-800",
+  ghost: "bg-transparent hover:bg-gray-100 text-gray-700"
+};
+
+const buttonClasses = `
+  flex inline-flex items-center gap-2 px-4 py-2 rounded-md transition-colors duration-200
+  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400
+${variantClasses.default}
+`;
+
+---
+
+<button  
+  id="back-to-top"
+  class={buttonClasses}
+  aria-label="Go back"
+>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+  <path d="M12 19V5" />
+  <path d="M5 12l7-7 7 7" />
+</svg>
+
+  <span>Back to top</span>
 </button>

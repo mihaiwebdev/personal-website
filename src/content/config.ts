@@ -29,6 +29,11 @@ const projects = defineCollection({
     draft: z.boolean().optional(),
     demoURL: z.string().optional(),
     liveURL: z.string().optional(),
+    badge: z.string().optional(),
+    img: z.string().optional(),
+    badgeColor: z.string().optional(),
+    badgeTextColor: z.string().optional(),
+    badgeAnimation: z.string().optional(),
   }),
 });
 

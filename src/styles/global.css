@@ -1,3 +1,16 @@
-.time-line-container>div:last-child .education__time>.education__line {
-    display: none;
+.time-line-container > div:last-child .education__time > .education__line {
+  display: none;
+}
+
+body {
+  @apply font-sans;
+}
+
+.animate {
+  @apply opacity-0 translate-y-3;
+  @apply transition-all duration-700 ease-out;
+}
+
+.animate.show {
+  @apply opacity-100 translate-y-0;
 }

@@ -1,8 +1,16 @@
 ---
+import BackToTop from "./BackToTop.astro";
+
 const today = new Date();
 ---
 
 <footer class="footer footer-center block mb-5 pt-10">
+
+  <div class="mt-12 relative flex justify-end items-center w-full lg:max-w-[900px] max-w-[100vw]">
+  
+      <BackToTop  />
+  
+  </div>
   <div class="pb-2">
     &copy; {today.getFullYear()} Mihai Sava
   </div>

@@ -1,44 +1,42 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank", badgeColor = 'badge-secondary',
-  badgeTextcolor, badgeAnimation
-} = Astro.props;
+
 import { Image } from "astro:assets";
-const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  project:  CollectionEntry<"projects">;
+  classNames: string
+}
+
+const {  project,
+  classNames
+} = Astro.props;
 ---
 
 <div
-  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+  class={`rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] ${classNames}`}
 >
-  <a href={url} target={target}>
+  <a href={`/${project.collection}/${project.slug}`}>
     <div class="hero-content flex-col md:flex-row">
       {
-        img && (
+        project.data.img && (
           <Image
-            src={img}
+            src={project.data.img}
             width={750}
             height={422}
             format="webp"
-            alt={title}
+            alt={project.data.title}
             class="max-w-full md:max-w-[13rem] rounded-lg"
           />
         )
       }
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
-          {title}
-          {badge && <div class={`badge ${badgeColor} mx-2 ${badgeTextcolor} ${badgeAnimation}`}>{badge}</div>}
+          {project.data.title}
+          {project.data.badge && <div class={`badge ${project.data.badgeColor} mx-2 ${project.data.badgeTextColor} ${project.data.badgeAnimation}`}>{project.data.badge}</div>}
         </h1>
-        <p class="py-1 text-1xl">{desc}</p>
-        <div class="card-actions justify-end">
-          {
-            tags &&
-              tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
-                  {tag}
-                </a>
-              ))
-          }
-        </div>
+        <p class="py-1 text-1xl">{project.data.description}</p>
       </div>
     </div>
   </a>

@@ -1,19 +1,16 @@
 ---
-title: "Video Repurpose"
-description: "A tool that help you transform your videos into written content in minutes."
-date: "Mar 20 2025"
-liveURL: "https://video-repurpose.com"
-demoURL: "https://www.youtube.com/watch?v=tkdUOpNeSF0"
+title: "Movie Picker"
+description: "A web app where you can find in seconds a good Movie or TV Series to watch."
+date: "Mar 20 2024"
+liveURL: "https://moviepicker.app"
+demoURL: "https://www.youtube.com/watch?v=grdjbRAWqOI"
+img: "/movie-picker.png"
+badge: "FREE"
+badgeColor: "badge-secondary"
 ---
 
-<img src="/video-repurpose-cta.png" alt="Video Repurpose" class="rounded-lg" />
+<img src="/movie-picker.png" alt="Movie Picker App" class="rounded-lg" />
 
-Are you a youtube content creator? Video-Repurpose can help you maximize your content!
+Movie Picker is completly FREE and was built to help movie lovers to find a Movie or TV Series to watch Fast!
 
-Instantly transform your YouTube videos into blogs, newsletters, and social media posts—so you can focus on creating more great content.
-
-✅ Save time
-
-✅ Reach new audiences
-
-✅ Boost engagement across platforms
+You can discover top-rated movies and TV shows to watch on your favorite streaming platform, based on your mood or genres that matches your current vibe.
