@@ -8,8 +8,6 @@ import { getCollection } from "astro:content";
 const blogs = (await getCollection("blogs"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-
-
 ---
 
 <BaseLayout title="blogs">
