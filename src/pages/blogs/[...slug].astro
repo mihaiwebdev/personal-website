@@ -8,16 +8,16 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 
 export async function getStaticPaths() {
-  const projects = (await getCollection("projects"))
+  const blogs = (await getCollection("blogs"))
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  return projects.map((project) => ({
+  return blogs.map((project) => ({
     params: { slug: project.slug },
     props: project,
   }));
 }
 
-type Props = CollectionEntry<"projects">;
+type Props = CollectionEntry<"blogs">;
 
 const project = Astro.props;
 const { Content } = await project.render();
@@ -26,7 +26,7 @@ const { Content } = await project.render();
 <BaseLayout title={project.data.title} description={project.data.description}>
   
     <div class="animate">
-      <BackToPrev text='Back to projects'>
+      <BackToPrev text='Back to blogs'>
         
       </BackToPrev>
     </div>
@@ -63,7 +63,7 @@ const { Content } = await project.render();
       )}
       
     </div>
-    <article class="animate prose prose-slate max-w-none font-semibold text-dark-600">
+    <article class="animate prose prose-slate max-w-none ">
       <Content />
     </article>
 </BaseLayout>

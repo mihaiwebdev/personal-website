@@ -3,11 +3,20 @@ import Link from "@components/Link.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import CvSection from "@components/CvSection.astro";
 
 const projects = (await getCollection("projects"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0,3)
 
+  const apps = (await getCollection("apps"))
+  .filter(project => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+
+  const blogs = (await getCollection("blogs"))
+  .filter(project => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 ---
 
 <BaseLayout>
@@ -17,7 +26,7 @@ const projects = (await getCollection("projects"))
     <div class="text-3xl py-3 font-bold ">Full-Stack Developer</div>
     <div class="py-2">
       <p class="">
-        I'm a Software Developer on the AI Innovation team at Marsh McLennan, and in my free time, I love building tools that make life easier, like:
+        I'm part of the AI Innovation team at Marsh McLennan, and I love building tools that make life easier, like:
         <span class="block">
           ✨ <Link href="https://video-repurpose.com">
             𝗩𝗶𝗱𝗲𝗼-𝗥𝗲𝗽𝘂𝗿𝗽𝗼𝘀𝗲.𝗰𝗼𝗺
@@ -31,43 +40,64 @@ const projects = (await getCollection("projects"))
     </div>
   </div>
 
-  <div>
-    <div id="projects" class="animate text-3xl w-full font-bold mb-2">
-      My Apps {"</>"}
+  <div class="animate">
+    <div id="apps" class="flex justify-between items-end w-full mb-2">
+      <span class="font-bold text-2xl sm:text-3xl">
+        My Apps {"</>"}
+      </span>
+        
+      <div class=" text-lg text-gray-600 font-bold">
+        <Link href="/apps" >See all apps</Link>
+      </div>
     </div>
 
-    {projects.slice(0,2).map(project => (
+    {apps.map(app => (
       <HorizontalCard
-      project={project}
-      classNames="animate"
-      
+      content={app}    
       />
-      <div class="divider my-0"></div>
+      
     ))}
   </div>
  
   <div class="mt-12 animate">
+    <div id="blogs" class="flex justify-between items-end w-full  mb-2">
+      <span class="font-bold text-2xl sm:text-3xl">
+        Blogs {"✒️"}
+      </span>
+
+      <div class=" text-lg text-gray-600 font-bold">
+        <Link href="/blogs" >See all blogs</Link>
+      </div>
+    </div>
+
+    {blogs.map(blog => (
+      <HorizontalCard
+      content={blog}
+      />
+    ))}
+  </div>
+
+  <div class="mt-12 animate">
     <div id="projects" class="flex justify-between items-end w-full  mb-2">
-      <span class="font-bold text-3xl">
+      <span class="font-bold text-2xl sm:text-3xl">
         Side Projects {"🧑‍💻"}
       </span>
 
-      <div class=" text-lg text-gray-600 font-bold  animate-pulse">
+      <div class=" text-lg text-gray-600 font-bold">
         <Link href="/projects" >See all projects</Link>
       </div>
     </div>
 
-    <!-- {projects.slice(2,projects.length).map(project => (
+    {projects.map(project => (
       <HorizontalCard
-      project={project}
+      content={project}
       />
-      <div class="divider my-0"></div>
-    ))} -->
+    ))}
   </div>
 
   
-  <!-- <div class="mt-5">
+  <div class="animate mt-5">
     <CvSection />
-  </div> -->
+  </div>
 </BaseLayout>
 

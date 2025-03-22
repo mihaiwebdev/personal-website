@@ -5,39 +5,42 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  project:  CollectionEntry<"projects">;
-  classNames: string
+  content:  CollectionEntry<"projects"> | CollectionEntry<"apps"> | CollectionEntry<"blogs"> ;
+  classNames?: string
 }
 
-const {  project,
+const {  content,
   classNames
 } = Astro.props;
 ---
 
-<div
-  class={`rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] ${classNames}`}
->
-  <a href={`/${project.collection}/${project.slug}`}>
+<div class="animate">
+  <div
+  class={`rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]  `}
+  >
+  <a href={`/${content.collection}/${content.slug}`}>
     <div class="hero-content flex-col md:flex-row">
       {
-        project.data.img && (
+        content.data.img && (
           <Image
-            src={project.data.img}
-            width={750}
-            height={422}
-            format="webp"
-            alt={project.data.title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
+          src={content.data.img}
+          width={750}
+          height={422}
+          format="webp"
+          alt={content.data.title}
+          class="max-w-full md:max-w-[13rem] rounded-lg"
           />
         )
       }
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
-          {project.data.title}
-          {project.data.badge && <div class={`badge ${project.data.badgeColor} mx-2 ${project.data.badgeTextColor} ${project.data.badgeAnimation}`}>{project.data.badge}</div>}
+          {content.data.title}
+          {content.data.badge && <div class={`badge ${content.data.badgeColor} mx-2 ${content.data.badgeTextColor} ${content.data.badgeAnimation}`}>{content.data.badge}</div>}
         </h1>
-        <p class="py-1 text-1xl">{project.data.description}</p>
+        <p class="py-1 text-1xl">{content.data.description}</p>
       </div>
     </div>
   </a>
+</div>
+<div class="divider my-0"></div>
 </div>

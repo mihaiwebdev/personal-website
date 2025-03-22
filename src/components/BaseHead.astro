@@ -54,7 +54,6 @@ const { title, description, image, ogType = "website" } = Astro.props;
 
 <script is:inline>
   function init() {
-    onScroll();
     animate();
 
     const backToTop = document.getElementById("back-to-top");
@@ -62,8 +61,6 @@ const { title, description, image, ogType = "website" } = Astro.props;
 
     const backToPrev = document.getElementById("back-to-prev");
     backToPrev?.addEventListener("click", () => window.history.back());
-
-    document.addEventListener("scroll", onScroll);
   }
   
   function animate() {
@@ -75,15 +72,6 @@ const { title, description, image, ogType = "website" } = Astro.props;
       }, index * 150);
     });
   }
-
-  function onScroll() {
-    if (window.scrollY > 0) {
-      document.documentElement.classList.add("scrolled");
-    } else {
-      document.documentElement.classList.remove("scrolled");
-    }
-  }
-
 
   function scrollToTop(event) {
     event.preventDefault();

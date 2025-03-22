@@ -1,46 +1,58 @@
 ---
 const activeClass = "bg-base-300";
+const currentPath = Astro.url.pathname;
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
   <li>
-    <a class="py-3 bg-base-300 text-base nav-link" id="home-link">Home</a>
-  </li>
-  <li><a class="py-3 text-base nav-link" id="projects-link">Projects</a></li>
-  <!-- <li>
-    <a class="py-3 text-base nav-link" id="experience-link">Experience</a>
-  </li>
-  <li><a class="py-3 text-base nav-link" id="skills-link">Skills</a></li>
-  <li><a class="py-3 text-base nav-link" id="education-link">Education</a></li>
-  <li>
-    <a
-      class="py-3 text-base"
-      href="mailto:mihaisava.dev@gmail.com"
-      target="_blank"
-      referrerpolicy="no-referrer-when-downgrade">Contact</a
+    <a 
+      href="/" 
+      class:list={["py-3 text-base nav-link", { [activeClass]: currentPath === "/" }]} 
+      id="home-link"
     >
-  </li> -->
+      Home
+    </a>
+  </li>
+
+  <li>
+    <a 
+      href="/apps" 
+      class:list={["py-3 text-base nav-link", { [activeClass]: currentPath.startsWith("/apps") }]} 
+      id="apps-link"
+    >
+      Apps
+    </a>
+  </li>
+
+
+  <li>
+    <a 
+      href="/blogs" 
+      class:list={["py-3 text-base nav-link", { [activeClass]: currentPath.startsWith("/blogs")}]} 
+      id="blogs-link"
+    >
+      Blogs
+    </a>
+  </li>
+
+  <li>
+    <a 
+      href="/projects" 
+      class:list={["py-3 text-base nav-link", { [activeClass]: currentPath.startsWith("/projects") }]} 
+      id="projects-link"
+    >
+      Side Projects
+    </a>
+  </li>
+
+  <li>
+    <a 
+      href="/#work" 
+      class:list={["py-3 text-base nav-link"]} 
+      id="work-link"
+    >
+      Work
+    </a>
+  </li>
 </ul>
 
-<script define:vars={{ activeClass: activeClass }}>
-  const navlinks = document.querySelectorAll(".nav-link");
-
-  navlinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      navlinks.forEach((navLink) => navLink.classList.remove(activeClass));
-      const targetElement = document.getElementById(
-        e.target.innerText.toLowerCase()
-      );
-
-      if (e.target.innerText === link.innerText) {
-        e.target.classList.add(activeClass);
-      } else {
-        e.target.classList.remove(activeClass);
-      }
-
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-      });
-    });
-  });
-</script>

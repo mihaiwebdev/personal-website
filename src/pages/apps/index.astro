@@ -4,32 +4,31 @@ import HorizontalCard from "@components/HorizontalCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const projects = (await getCollection("projects"))
+const apps = (await getCollection("apps"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 ---
 
-<BaseLayout title="projects">
-  <div class="pb-12 mt-5" id="projects">
-    <div class="text-5xl font-bold"> Side Projects {"🧑‍💻"}</div>
+<BaseLayout title="apps">
+  <div class="pb-12 mt-5" id="apps">
+    <div class="text-5xl font-bold"> Apps {"🧑‍💻"}</div>
     <div class="py-2">
       <p class="">
-        These are some of the projects I have built over time for the purpose of learning. Some include links to the live app, while others link to a demo.
-      </p>
+        Here are some apps I've built to simplify tasks and enhance productivity.
+        </p>
     </div>
   </div>
 
 
   <BackToPrev  variant="outline" className="mb-5" text="Back to home">
-    
   </BackToPrev>
   
-  {projects.map(project => (
+  {apps.map(apps => (
     <HorizontalCard
-    content={project}
+    content={apps}
     />
   ))}
- 
+  
 </BaseLayout>
 
 <script></script>

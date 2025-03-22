@@ -1,7 +1,7 @@
 ---
 title: "Video Repurpose"
 description: "A tool that help you transform your videos into written content in minutes."
-date: "Mar 20 2025"
+date: "Mar 2025"
 liveURL: "https://video-repurpose.com"
 demoURL: "https://www.youtube.com/watch?v=tkdUOpNeSF0"
 img: "/video-repurpose-cta.png"
@@ -22,3 +22,7 @@ Instantly transform your YouTube videos into blogs, newsletters, and social medi
 ✅ Reach new audiences
 
 ✅ Boost engagement across platforms
+
+### Check out if you want, the process of building the app 👉 <a href="/blogs/video-repurpose">here</a>
+
+`Tech stack: React.js · Nest.js · TypeScript · MongoDB`
