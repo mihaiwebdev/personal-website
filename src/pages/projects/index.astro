@@ -9,7 +9,7 @@ const projects = (await getCollection("projects"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 ---
 
-<BaseLayout title="projects">
+<BaseLayout title="projects" >
   <div class="pb-12 mt-5" id="projects">
     <div class="text-5xl font-bold"> Side Projects {"🧑‍💻"}</div>
     <div class="py-2">

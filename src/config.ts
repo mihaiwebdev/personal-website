@@ -3,6 +3,6 @@
 
 export const SITE_TITLE = "Mihai Sava | Portfolio";
 export const SITE_DESCRIPTION =
-  "This is my Personal website where you can intuitively see my professional experiences, projects, education and more";
+  "This is my personal website where I showcase my work and share my thoughts.";
 export const GENERATE_SLUG_FROM_TITLE = true;
 export const TRANSITION_API = true;
