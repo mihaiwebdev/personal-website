@@ -28,7 +28,7 @@ const { title, description, image, ogType = "website" } = Astro.props;
 
 <!-- Open Graph / Facebook card -->
 <meta property="og:type" content={ogType} />
-<meta property="og:url" content="https://www.savamihai.com" />
+<meta property="og:url" content={Astro.url}/>
 <meta property="og:title" content={title} />
 <meta
   property="og:description"

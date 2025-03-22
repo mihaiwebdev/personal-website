@@ -16,10 +16,10 @@ export async function getStaticPaths() {
     props: project,
   }));
 }
-
 type Props = CollectionEntry<"blogs">;
 
 const blog = Astro.props;
+console.log(blog.data.img)
 const { Content } = await blog.render();
 ---
 
