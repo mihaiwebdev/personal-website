@@ -22,7 +22,7 @@ const blog = Astro.props;
 const { Content } = await blog.render();
 ---
 
-<BaseLayout title={blog.data.title} description={blog.data.description} image={`https://www.savamihai.com${blog.data.img}`} ogType="article">
+<BaseLayout title={blog.data.title} description={blog.data.description} image={`https://savamihai.com${blog.data.img}`} ogType="article">
   
     <div class="animate">
       <BackToPrev text='Back to blogs'>
