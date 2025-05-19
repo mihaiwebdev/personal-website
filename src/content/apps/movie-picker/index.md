@@ -2,7 +2,7 @@
 title: "Movie Picker"
 description: "A web app where you can find in seconds a good Movie or TV Series to watch."
 date: "May 2024"
-liveURL: "https://moviepicker.app"
+liveURL: "https://moviepicker.xyz"
 demoURL: "https://www.youtube.com/watch?v=grdjbRAWqOI"
 img: "/movie-picker.png"
 badge: "FREE"
